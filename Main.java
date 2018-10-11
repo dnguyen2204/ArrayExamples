@@ -12,9 +12,7 @@ class Main
     
     public static void main( String[] args)
     {
-     
-     
-        
+
         /*
          * SET UP
          * We are going to ask the user to input an integer 
@@ -30,16 +28,15 @@ class Main
          * Task 1.  Create an array of integers from 0 to n-1
          *          call this array ar1.  Print it out below.
          */
-        
-        System.out.println("*** PRINTING ar1 *");
         int[] ar1 = new int[n];
-        for (int i=0; i<ar1.length; i++)
+        System.out.println("*** PRINTING ar1 -- Task 1 *");
+        for (int i=0; i<ar1.length; i++)//makes ar1
         {
             ar1[i] = i;
         }
         
         
-        for (int i=0; i<ar1.length; i++)
+        for (int i=0; i<ar1.length; i++)//prints ar1
         {            
             System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
         }
@@ -49,10 +46,11 @@ class Main
          * Task 2.  Create a new array called ar2.
          *          Copy the elements of ar1 into ar2.
          */
-        System.out.println("*** PRINTING ar2 *");
+        System.out.println("*** PRINTING ar2 -- Task 2*");
         int[] ar2 = new int[ar1.length];
         //use ar2=ar1.clone() or for loop (creates 2 arrays), not ar2=ar1 (only one array)
-        for (int i=0; i<ar1.length; i++)
+        //because pointer variables
+        for (int i=0; i<ar1.length; i++)//makes  and prints ar2
         {
             ar2[i] = ar1[i];
             System.out.println("ar2[" + i + "]= " + ar2[i]);
@@ -63,8 +61,8 @@ class Main
         /* 
          * Task 3. Add 1 to each element in ar1.  Print it out below
          */
-        System.out.println("*** PRINTING ar1 +1 *");
-        for (int i=0; i<ar1.length; i++)
+        System.out.println("*** PRINTING ar1 +1 -- Task 3*");
+        for (int i=0; i<ar1.length; i++)//prints ar1 with the elements increased by 1
         {
             ar1[i]= ar1[i]+1;
             System.out.println("ar1[" + i + "]= " + ar1[i]);
@@ -78,14 +76,40 @@ class Main
          *         Copy the elements of ar1 into ar3.  Then do it again
          *         For example
          *         ar1: 1 2 3
-         *         ar3: 1 2 3 0 1 2 3
+         *         ar3: 1 2 3 1 2 3
          */
-        int[] ar3 = new int[ar1.length];
+        int[] ar3 = new int[ar1.length*2];
+        System.out.println("*** PRINTING ar3 -- Task 4*");
+        for (int i=0; i<ar1.length; i++)//makes ar3
+        {
+            ar3[i] = ar1[i];//makes first half of ar3
+            ar3[ar1.length +i] = ar1[i];//makes second half of ar3
+        }
+
+        for (int i=0; i<ar3.length; i++)//prints ar3
+        {            
+            System.out.println("ar3[" + i + "]= " + ar3[i]);//prints "ar3[i] ="  ar3[i]
+        }
+        
         
         /*
          * Task 5.  Switch the first and last element of ar1.
          *          print out the new ar1.  Then switch them back
          */
+        int temp;
+        //SWITCHING
+        temp = ar1[ar1.length-1];//assigns the last value of ar1 to temp
+        ar1[ar1.length-1] = ar1[0];// the last value of ar1 is now equivalent to the first value
+        ar1[0] = temp;//the first value of ar1 is now the previous last value
+        System.out.println("*** PRINTING SWITCHED ar1 -- Task 5*");
+        for (int i=0; i<ar1.length; i++)//prints ar1
+        {            
+            System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
+        }
+        //UNSWITCHING
+        temp = ar1[ar1.length-1];//assigns the last value of ar1 to temp
+        ar1[ar1.length-1] = ar1[0];// the last value of ar1 is now equivalent to the first value
+        ar1[0] = temp;//the first value of ar1 is now the previous last value
         
         /*
          * Task 6A. Print the 2nd to (n-1)th elements of ar1
@@ -94,19 +118,45 @@ class Main
          *          the indices are multiples of 3
          *         
          */
-        
+        System.out.println("*** PRINTING ar1 from 2nd to n-1th -- Task 6A*");
+        for (int i=1; i<ar1.length-1; i++)//prints ar1
+        {            
+            System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
+        }
+        System.out.println("*** PRINTING ar1 odd numbers -- Task 6B*");
+        //odd numbers are even indices because one was added earlier
+        for (int i=0; i<ar1.length; i+=2)//prints ar1
+        {            
+            System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
+        }
+        System.out.println("*** PRINTING ar1 indices multiple of 3 -- Task 6C*");
+        for (int i=0; i<ar1.length; i+=3)//prints ar1
+        {            
+            System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
+        }
         /*
          * Task 7.  For each element in ar1, 
          *          If the element is even: leave alone
          *          if the element is odd, multiply by 10
          *          print out the new ar1
          *          Example
-         *          ar[0]=10
-         *          ar[1]=2
-         *          ar[2]=30
-         *          ar[3]=4
+         *          ar1[0]=10
+         *          ar11]=2
+         *          ar1[2]=30
+         *          ar1[3]=4
          */
-        
+        System.out.println("*** PRINTING ar1 if odd *10 -- Task 7*");
+        for (int i=0; i<ar1.length; i++)
+        {
+            if (ar1[i]%2==1)
+            {
+                ar1[i] = ar1[i]*10;
+            }
+        }
+        for (int i=0; i<ar1.length; i++)//prints ar1
+        {            
+            System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
+        }
          /*
           * Task 8
           *    Create an array called ar2odds
