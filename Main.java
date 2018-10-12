@@ -102,10 +102,12 @@ class Main
         ar1[ar1.length-1] = ar1[0];// the last value of ar1 is now equivalent to the first value
         ar1[0] = temp;//the first value of ar1 is now the previous last value
         System.out.println("*** PRINTING SWITCHED ar1 -- Task 5*");
+        
         for (int i=0; i<ar1.length; i++)//prints ar1
         {            
             System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
         }
+        
         //UNSWITCHING
         temp = ar1[ar1.length-1];//assigns the last value of ar1 to temp
         ar1[ar1.length-1] = ar1[0];// the last value of ar1 is now equivalent to the first value
@@ -123,16 +125,22 @@ class Main
         {            
             System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
         }
+        
         System.out.println("*** PRINTING ar1 odd numbers -- Task 6B*");
-        //odd numbers are even indices because one was added earlier
-        for (int i=0; i<ar1.length; i+=2)//prints ar1
+        //odd numbers are even indices
+        //I could just put an if statement to check the value
+        for (int i=0; i<ar1.length; i+=1)//prints ar1
         {            
-            System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
+            if (ar1[i]%2==1)
+                System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
         }
+        
+        
         System.out.println("*** PRINTING ar1 indices multiple of 3 -- Task 6C*");
-        for (int i=0; i<ar1.length; i+=3)//prints ar1
+        for (int i=0; i<ar1.length; i+=1)//prints ar1
         {            
-            System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
+            if (i%3==0)
+                System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
         }
         /*
          * Task 7.  For each element in ar1, 
@@ -145,7 +153,7 @@ class Main
          *          ar1[2]=30
          *          ar1[3]=4
          */
-        System.out.println("*** PRINTING ar1 if odd *10 -- Task 7*");
+        System.out.println("*** PRINTING ar1 if odd * 10 -- Task 7*");
         for (int i=0; i<ar1.length; i++)
         {
             if (ar1[i]%2==1)
@@ -167,12 +175,29 @@ class Main
           *    ar2[2]=2
           *    ar2[3]=3  ->  ar2odds[1]=3
           */
+        
+        System.out.println("*** PRINTING ar2odds -- Task 8*");
+        int[] ar2odds = new int[ar2.length/2];
+        for (int i =0; i<ar2.length; i++)
+        {
+            if (i%2==1) // if indices are odd
+            {
+                ar2odds[i/2] = ar2[i];//the i/2 works because java math
+            }
+        }
+        for (int i=0; i<ar2odds.length; i++)//prints ar2odds
+        {            
+            System.out.println("ar2odds[" + i + "]= " + ar2odds[i]);
+        }
          
         /*
          * Task 9. In the array ar2, count how many odd numbers you
          * have.  Then create an ew array called ar4.  Copy just the odd
          * numbers from ar1 into ar4.  Print ar4
          */
+
+        
+        
         
         /*
          * Task 10.  Shift the elements of ar4 right by 1
