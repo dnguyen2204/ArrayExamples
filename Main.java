@@ -193,18 +193,42 @@ class Main
         /*
          * Task 9. In the array ar2, count how many odd numbers you
          * have.  Then create an ew array called ar4.  Copy just the odd
-         * numbers from ar1 into ar4.  Print ar4
+         * numbers from ar2 into ar4.  Print ar4
          */
-
         
+        System.out.println("*** PRINTING ar4-- Task 9*");
+        int count=0;
+        for (int i=0; i<ar2.length; i++)//counts odd numbers in ar2
+        {
+            if (ar2[i]%2==1)
+            {
+                count+=1;
+            }
+        }
+        int[] ar4 = new int[ar2.length/2];
+        for (int i=0; i<ar2.length; i++)//copies odd numbers
+        {
+            if (ar2[i]%2==1)
+            {
+                ar4[i/2]= ar2[i];
+            }
+        }
         
-        
+        for (int i=0; i<ar2odds.length; i++)//prints ar4
+        {            
+            System.out.println("ar4[" + i + "]= " + ar4[i]);
+        }
         /*
          * Task 10.  Shift the elements of ar4 right by 1
          * For example
          * old   ar4: 1 3 5 7 9
          * new   ar4  9 1 3 5 7
          */
+        int value;
+        for (int i=0; i<ar4.length; i++)
+        {
+            
+        }
         
         
         /*
