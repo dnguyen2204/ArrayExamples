@@ -101,6 +101,8 @@ class Main
         temp = ar1[ar1.length-1];//assigns the last value of ar1 to temp
         ar1[ar1.length-1] = ar1[0];// the last value of ar1 is now equivalent to the first value
         ar1[0] = temp;//the first value of ar1 is now the previous last value
+        
+        
         System.out.println("*** PRINTING SWITCHED ar1 -- Task 5*");
         
         for (int i=0; i<ar1.length; i++)//prints ar1
@@ -224,16 +226,60 @@ class Main
          * old   ar4: 1 3 5 7 9
          * new   ar4  9 1 3 5 7
          */
+        //(new) ar4[i]= (old) ar4[i-1]
+        //work: 9 1 3 5 7
+        //repeatedly switch the 9 one to the left
+        //repeatedly swtich the last number one to the left
+        
+        
+        
+        
+        System.out.println("*** PRINTING ar4 shifted right by 1-- Task 10*");
         int value;
-        for (int i=0; i<ar4.length; i++)
+        int loop;
+        /*
+         * assume array [x, y]
+         * how to switch
+         * int temp = array[y];
+         * array[y] = array[x];
+         * array[x] = temp;
+         * to put y into x
+         * in this example [1, 3, 5] --> [5, 1, 3]
+         * want to put ar[1] into ar[2]
+         * ar[i] into ar[i+1]
+         * y = ar[i]
+         * x= ar[i+1]
+         * 
+         */
+        for (int i=ar4.length-1; i>0; i--)
+        //has to be >0 or else array index out of bounds
+        //this for loop goes from the last number and iterates down
+        //runs ar4.length-1 times, which means it iterates thru the whole array
+        //is there a way to do this and with for(int i=0; i<ar4.length; i++)?
         {
+            //switches the last number with the one before it
+            value = ar4[i];
+            ar4[i] = ar4[i-1];
+            ar4[i-1] = value;
+            
             
         }
         
-        
+        for (int i=0; i<ar2odds.length; i++)//prints ar4 shifted right by 1
+        {            
+            System.out.println("ar4[" + i + "]= " + ar4[i]);
+        }
         /*
          * Task 11.  Reverse the order of elements in ar2
+         * 0 1 2 3
+         * 3 2 1 0
          */
+        //can create new array and iterate thru ar2 backwards, adding the elements to newar2
+        //I want to do it thru the same array
+        for (int i=0; i<ar2.length; i++)
+        {
+            
+        }
         
         
         /*
