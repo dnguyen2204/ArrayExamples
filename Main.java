@@ -240,9 +240,9 @@ class Main
         /*
          * assume array [x, y]
          * how to switch
-         * int temp = array[y];
-         * array[y] = array[x];
-         * array[x] = temp;
+          int temp = array[y];
+          array[y] = array[x];
+          array[x] = temp;
          * to put y into x
          * in this example [1, 3, 5] --> [5, 1, 3]
          * want to put ar[1] into ar[2]
@@ -276,11 +276,20 @@ class Main
          */
         //can create new array and iterate thru ar2 backwards, adding the elements to newar2
         //I want to do it thru the same array
-        for (int i=0; i<ar2.length; i++)
+        //each element switches with the element on the other side of the middle
+        //INCOMPLETE
+        System.out.println("*** PRINTING ar2 reversed-- Task 11*");
+        int middle = (ar2.length-1)/2;
+        for (int i=0; i<ar2.length; i++)//reversing ar2
         {
-            
+            temp = ar2[middle+i];
+            ar2[middle+i] = ar2[middle-i];
+            ar2[middle-1] = temp;
         }
-        
+         for (int i=0; i<ar2odds.length; i++)//prints ar4 shifted right by 1
+        {            
+            System.out.println("ar2[" + i + "]= " + ar2[i]);
+        }
         
         /*
          * Task 12: 
