@@ -177,9 +177,11 @@ class Main
           *    ar2[2]=2
           *    ar2[3]=3  ->  ar2odds[1]=3
           */
-        
+        //you could use separate variable that counts only under certain condition
         System.out.println("*** PRINTING ar2odds -- Task 8*");
+        //NOTE: THIS CODE ONLY SITUATIONALLY WORKS
         int[] ar2odds = new int[ar2.length/2];
+        
         for (int i =0; i<ar2.length; i++)
         {
             if (i%2==1) // if indices are odd
@@ -200,6 +202,7 @@ class Main
         
         System.out.println("*** PRINTING ar4-- Task 9*");
         int count=0;
+        //this is int k==0; place
         for (int i=0; i<ar2.length; i++)//counts odd numbers in ar2
         {
             if (ar2[i]%2==1)
@@ -207,12 +210,14 @@ class Main
                 count+=1;
             }
         }
-        int[] ar4 = new int[ar2.length/2];
+        int[] ar4 = new int[count];
         for (int i=0; i<ar2.length; i++)//copies odd numbers
         {
             if (ar2[i]%2==1)
             {
-                ar4[i/2]= ar2[i];
+                ar4[i/2]= ar2[i];//again, the i/2 works only bc java math
+                //also this i/2 only works situationally
+                //this is the place where you would want to do k++
             }
         }
         
@@ -275,21 +280,12 @@ class Main
          * 3 2 1 0
          */
         //can create new array and iterate thru ar2 backwards, adding the elements to newar2
+        //then can clone newar2 into ar2
         //I want to do it thru the same array
         //each element switches with the element on the other side of the middle
-        //INCOMPLETE
+        //array can either be length even or odd, which screws up middle
         System.out.println("*** PRINTING ar2 reversed-- Task 11*");
-        int middle = (ar2.length-1)/2;
-        for (int i=0; i<ar2.length; i++)//reversing ar2
-        {
-            temp = ar2[middle+i];
-            ar2[middle+i] = ar2[middle-i];
-            ar2[middle-1] = temp;
-        }
-         for (int i=0; i<ar2odds.length; i++)//prints ar4 shifted right by 1
-        {            
-            System.out.println("ar2[" + i + "]= " + ar2[i]);
-        }
+        
         
         /*
          * Task 12: 
