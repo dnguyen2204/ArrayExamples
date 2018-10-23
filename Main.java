@@ -240,8 +240,8 @@ class Main
         
         
         System.out.println("*** PRINTING ar4 shifted right by 1-- Task 10*");
-        int value;
-        int loop;
+        
+        
         /*
          * assume array [x, y]
          * how to switch
@@ -256,6 +256,7 @@ class Main
          * x= ar[i+1]
          * 
          */
+        int value;
         for (int i=ar4.length-1; i>0; i--)
         //has to be >0 or else array index out of bounds
         //this for loop goes from the last number and iterates down
@@ -263,6 +264,10 @@ class Main
         //is there a way to do this and with for(int i=0; i<ar4.length; i++)?
         {
             //switches the last number with the one before it
+            //1 3 5 
+            //1 5 3
+            //5 1 3
+            //notice the diagnol line of 5
             value = ar4[i];
             ar4[i] = ar4[i-1];
             ar4[i-1] = value;
@@ -284,8 +289,24 @@ class Main
         //I want to do it thru the same array
         //each element switches with the element on the other side of the middle
         //array can either be length even or odd, which screws up middle
-        System.out.println("*** PRINTING ar2 reversed-- Task 11*");
+        //yeah, screw this i'm doing this the easy way
         
+        System.out.println("*** PRINTING ar2 reversed-- Task 11*");
+        int[] newar2 = new int[ar2.length];
+        int k = 0;
+        for (int i=ar2.length-1; i>0; i--)//iterates thru ar2 backwards
+        {
+            newar2[k] = ar2[i];//assigns to newar2
+            k++;
+        }
+        for (int i=0; i<ar2.length; i++)//copies newar2 into ar2 since it says to change ar2
+        {
+            ar2[i] = newar2[i];
+        }
+        for (int i=0; i<ar2.length; i++)//prints ar2 reversed
+        {            
+            System.out.println("ar2[" + i + "]= " + ar2[i]);
+        }
         
         /*
          * Task 12: 
@@ -310,6 +331,21 @@ class Main
          *  
          *  Count how many words have more than 5 letters.
          */
+        String[] ar5 = {"Four", "score", "and", "seven", "year", "ago", "our", "fathers",
+            "brought", "forth", "on", "this", "continent", "a", "new", "nation"};
+        int[] ar6 = new int[ar5.length];
+        count = 0;//count was already created
+        for (int i=0; i<ar5.length; i++)
+        {
+            ar6[i] = ar5[i].length();//.length() is for strings
+        }
+        for (int i=0; i<ar6.length; i++)
+        {
+            if(ar6[i]>5)
+            {
+                count++;
+            }
+        }
         
         /*
          * Task 13
