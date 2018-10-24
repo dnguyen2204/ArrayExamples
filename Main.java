@@ -29,7 +29,7 @@ class Main
          *          call this array ar1.  Print it out below.
          */
         int[] ar1 = new int[n];
-        System.out.println("*** PRINTING ar1 -- Task 1 *");
+        System.out.println("\n*** PRINTING ar1 -- Task 1 *");
         for (int i=0; i<ar1.length; i++)//makes ar1
         {
             ar1[i] = i;
@@ -46,7 +46,7 @@ class Main
          * Task 2.  Create a new array called ar2.
          *          Copy the elements of ar1 into ar2.
          */
-        System.out.println("*** PRINTING ar2 -- Task 2*");
+        System.out.println("\n*** PRINTING ar2 -- Task 2*");
         int[] ar2 = new int[ar1.length];
         //use ar2=ar1.clone() or for loop (creates 2 arrays), not ar2=ar1 (only one array)
         //because pointer variables
@@ -61,7 +61,7 @@ class Main
         /* 
          * Task 3. Add 1 to each element in ar1.  Print it out below
          */
-        System.out.println("*** PRINTING ar1 +1 -- Task 3*");
+        System.out.println("\n*** PRINTING ar1 +1 -- Task 3*");
         for (int i=0; i<ar1.length; i++)//prints ar1 with the elements increased by 1
         {
             ar1[i]= ar1[i]+1;
@@ -79,7 +79,7 @@ class Main
          *         ar3: 1 2 3 1 2 3
          */
         int[] ar3 = new int[ar1.length*2];
-        System.out.println("*** PRINTING ar3 -- Task 4*");
+        System.out.println("\n*** PRINTING ar3 -- Task 4*");
         for (int i=0; i<ar1.length; i++)//makes ar3
         {
             ar3[i] = ar1[i];//makes first half of ar3
@@ -103,7 +103,7 @@ class Main
         ar1[0] = temp;//the first value of ar1 is now the previous last value
         
         
-        System.out.println("*** PRINTING SWITCHED ar1 -- Task 5*");
+        System.out.println("\n*** PRINTING SWITCHED ar1 -- Task 5*");
         
         for (int i=0; i<ar1.length; i++)//prints ar1
         {            
@@ -122,13 +122,13 @@ class Main
          *          the indices are multiples of 3
          *         
          */
-        System.out.println("*** PRINTING ar1 from 2nd to n-1th -- Task 6A*");
+        System.out.println("\n*** PRINTING ar1 from 2nd to n-1th -- Task 6A*");
         for (int i=1; i<ar1.length-1; i++)//prints ar1
         {            
             System.out.println("ar1[" + i + "]= " + ar1[i]);//prints "ar1[i] ="  ar1[i]
         }
         
-        System.out.println("*** PRINTING ar1 odd numbers -- Task 6B*");
+        System.out.println("\n*** PRINTING ar1 odd numbers -- Task 6B*");
         //odd numbers are even indices
         //I could just put an if statement to check the value
         for (int i=0; i<ar1.length; i+=1)//prints ar1
@@ -138,7 +138,7 @@ class Main
         }
         
         
-        System.out.println("*** PRINTING ar1 indices multiple of 3 -- Task 6C*");
+        System.out.println("\n*** PRINTING ar1 indices multiple of 3 -- Task 6C*");
         for (int i=0; i<ar1.length; i+=1)//prints ar1
         {            
             if (i%3==0)
@@ -155,7 +155,7 @@ class Main
          *          ar1[2]=30
          *          ar1[3]=4
          */
-        System.out.println("*** PRINTING ar1 if odd * 10 -- Task 7*");
+        System.out.println("\n*** PRINTING ar1 if odd * 10 -- Task 7*");
         for (int i=0; i<ar1.length; i++)
         {
             if (ar1[i]%2==1)
@@ -178,7 +178,7 @@ class Main
           *    ar2[3]=3  ->  ar2odds[1]=3
           */
         //you could use separate variable that counts only under certain condition
-        System.out.println("*** PRINTING ar2odds -- Task 8*");
+        System.out.println("\n*** PRINTING ar2odds -- Task 8*");
         //NOTE: THIS CODE ONLY SITUATIONALLY WORKS
         int[] ar2odds = new int[ar2.length/2];
         
@@ -200,7 +200,7 @@ class Main
          * numbers from ar2 into ar4.  Print ar4
          */
         
-        System.out.println("*** PRINTING ar4-- Task 9*");
+        System.out.println("\n*** PRINTING ar4-- Task 9*");
         int count=0;
         //this is int k==0; place
         for (int i=0; i<ar2.length; i++)//counts odd numbers in ar2
@@ -239,7 +239,7 @@ class Main
         
         
         
-        System.out.println("*** PRINTING ar4 shifted right by 1-- Task 10*");
+        System.out.println("\n*** PRINTING ar4 shifted right by 1-- Task 10*");
         
         
         /*
@@ -291,7 +291,7 @@ class Main
         //array can either be length even or odd, which screws up middle
         //yeah, screw this i'm doing this the easy way
         
-        System.out.println("*** PRINTING ar2 reversed-- Task 11*");
+        System.out.println("\n*** PRINTING ar2 reversed-- Task 11*");
         int[] newar2 = new int[ar2.length];
         int k = 0;
         for (int i=ar2.length-1; i>0; i--)//iterates thru ar2 backwards
@@ -331,6 +331,8 @@ class Main
          *  
          *  Count how many words have more than 5 letters.
          */
+        System.out.println("\n*** PRINTING words with >5 letters-- Task 12*");
+        
         String[] ar5 = {"Four", "score", "and", "seven", "year", "ago", "our", "fathers",
             "brought", "forth", "on", "this", "continent", "a", "new", "nation"};
         int[] ar6 = new int[ar5.length];
@@ -346,7 +348,7 @@ class Main
                 count++;
             }
         }
-        
+        System.out.println(count + " words have more than 5 letters.");
         /*
          * Task 13
          * Create an array called monsterArray of 5 Monsters.
@@ -361,6 +363,33 @@ class Main
          * Use a for loop to print out the names of monster that start with
          * a vowel
          */
+        System.out.println("\n*** PRINTING monsterArray names-- Task 13*");
+        String[] monsterArray = {"Cookie", "Grover", "Oscar the Grouch", "Elmo", "Rosita"};
+        for (int i=0; i<monsterArray.length; i++)
+        {
+            System.out.println("monsterArray[" + i + "]= " + monsterArray[i]);
+        }
+        
+        System.out.println("\n*** PRINTING monsterArray vowel start names-- Task 13*");
+        String thisMonster;
+        char startLetter;
+        for (int i=0; i<monsterArray.length; i++)
+        {
+            thisMonster = monsterArray[i];
+            startLetter = thisMonster.charAt(0);
+            //this is in chars because == doesn't work with strings
+            if (startLetter=='A' || startLetter=='E' || startLetter=='I'
+                || startLetter=='O' || startLetter=='U')//checks vowel
+                {
+                        System.out.println(thisMonster);//prints if vowel
+                }
+                /*  DEBUGGING TOOL
+                else
+                {
+                    System.out.println("No vowel.");
+                }
+                */
+        }
         
          /*
           * Task 14
@@ -377,7 +406,37 @@ class Main
           *      So arindex[0]=2
           *         arindex[1]=5
           */
-         
+        System.out.println("\n*** PRINTING arindex-- Task 14*");
+        int[] arx = new int[92];
+        k=3; // k was created earlier 
+        for (int i=0; i<arx.length; i++)//makes arx, an array of integers from 3 to 94
+        {
+            arx[i] = k;
+            k++;
+        }
+
+        count=0; //count was already created
+        int j=0;//to be used as a seprate index
+        for (int i=0; i<arx.length; i++)
+        {
+            if (arx[i]%3==0)
+            {
+                count++;
+            }
+        }
+        int[] arindex = new int[count];
+        for (int i=0; i<arx.length; i++)
+        {
+            if (arx[i]%3==0)
+            {
+                arindex[j] = i;
+                j++;
+            }
+        }
+        for (int i=0; i<arindex.length; i++)
+        {
+            System.out.println("arindex[" + i + "]= " + arindex[i]);
+        }
          /*
           * Create an arrary called "fb" and calculate the
           * first 10 fibonacci sequence.  You start with
@@ -387,6 +446,15 @@ class Main
           * fb[3]=fb[1]+fb[2]
           * fb[4]=fb[2]+fb[3]
           */
+        int[] fb = new int[10];
+        fb[0]= 1;
+        fb[1]=1;
+        for (int i=2; i<fb.length; i++)
+        {
+            fb[i] = fb[i-1] + fb[i-2];
+        }
+        
+        
         
     }
 }
