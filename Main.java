@@ -335,11 +335,14 @@ class Main
         
         String[] ar5 = {"Four", "score", "and", "seven", "year", "ago", "our", "fathers",
             "brought", "forth", "on", "this", "continent", "a", "new", "nation"};
-        int[] ar6 = new int[ar5.length];
+        
+        int[] ar6 = new int[ar5.length];//[0, 0, 0, ..., 0]
         count = 0;//count was already created
+        String word;
         for (int i=0; i<ar5.length; i++)
         {
-            ar6[i] = ar5[i].length();//.length() is for strings
+            word = ar5[i];//ar5[i] is a String
+            ar6[i] = word.length();//.length() is for strings, word is a String, word.length() is an int
         }
         for (int i=0; i<ar6.length; i++)
         {
@@ -417,7 +420,7 @@ class Main
 
         count=0; //count was already created
         int j=0;//to be used as a seprate index
-        for (int i=0; i<arx.length; i++)
+        for (int i=0; i<arx.length; i++)//counts the length to be used for arindex
         {
             if (arx[i]%3==0)
             {
@@ -425,7 +428,7 @@ class Main
             }
         }
         int[] arindex = new int[count];
-        for (int i=0; i<arx.length; i++)
+        for (int i=0; i<arx.length; i++)//adds the indexes in which the element is divisible by 3
         {
             if (arx[i]%3==0)
             {
@@ -446,6 +449,7 @@ class Main
           * fb[3]=fb[1]+fb[2]
           * fb[4]=fb[2]+fb[3]
           */
+        System.out.println("\n*** PRINTING Fibonacci-- Task 15*");
         int[] fb = new int[10];
         fb[0]= 1;
         fb[1]=1;
@@ -453,8 +457,19 @@ class Main
         {
             fb[i] = fb[i-1] + fb[i-2];
         }
+        for (int i=0; i<fb.length; i++)
+        {
+            System.out.println("fb[" + i + "]= " + fb[i]); 
+        }
         
+        /*
+        int[] array = {0, 1};
         
+        double[] array1 = {0.0, 1.1};
         
+        String[] array2 = {"aaa", "bbb"};
+        
+        char[] array3 = {'a', 'b'};
+        */
     }
 }
