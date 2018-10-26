@@ -1,7 +1,7 @@
 /*
  * Example for Arrays
  */
-
+import java.lang.Math;
 import java.util.Scanner;
 
 class Main
@@ -462,6 +462,28 @@ class Main
             System.out.println("fb[" + i + "]= " + fb[i]); 
         }
         
+        
+        //let's try to make a quicksort
+        System.out.println("What size array do you want to sort?");
+        int x = s.nextInt();
+        int[] sortThis = new int[x];
+        for (int i=0; i<sortThis.length; i++)
+        {
+            sortThis[i] = (int) (100*Math.random()) +1;//random numbers from 1 to 100
+        }
+        int[] partition = new int[10];//idk what to put in here
+        int partIndex =0;
+        for (int i=sortThis.length; i>16; i/=2)//makes partitions
+        {
+            partition[partIndex]+=i;
+            partIndex++;
+        }
+        //make an insertion sort to use in quicksort
+        partIndex=0;
+        for (int i=0; i<partition[partIndex]; i++)
+        {
+            
+        }
         /*
         int[] array = {0, 1};
         
