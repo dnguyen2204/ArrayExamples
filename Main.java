@@ -376,9 +376,9 @@ class Main
         System.out.println("\n*** PRINTING monsterArray vowel start names-- Task 13*");
         String thisMonster;
         char startLetter;
-        for (int i=0; i<monsterArray.length; i++)
+        for (String thing: monsterArray)
         {
-            thisMonster = monsterArray[i];
+            thisMonster = thing;
             startLetter = thisMonster.charAt(0);
             //this is in chars because == doesn't work with strings
             if (startLetter=='A' || startLetter=='E' || startLetter=='I'
@@ -463,35 +463,11 @@ class Main
         }
         
         
-        //let's try to make a quicksort
-        System.out.println("What size array do you want to sort?");
-        int x = s.nextInt();
-        int[] sortThis = new int[x];
-        for (int i=0; i<sortThis.length; i++)
+        System.out.println("\nEnhanced For Loop");
+        for (String monster: monsterArray)
         {
-            sortThis[i] = (int) (100*Math.random()) +1;//random numbers from 1 to 100
+               System.out.println("Monster name is " + monster);
+               System.out.println("Amount of characters = " +monster.length());
         }
-        int[] partition = new int[10];//idk what to put in here
-        int partIndex =0;
-        for (int i=sortThis.length; i>16; i/=2)//makes partitions
-        {
-            partition[partIndex]+=i;
-            partIndex++;
-        }
-        //make an insertion sort to use in quicksort
-        partIndex=0;
-        for (int i=0; i<partition[partIndex]; i++)
-        {
-            
-        }
-        /*
-        int[] array = {0, 1};
-        
-        double[] array1 = {0.0, 1.1};
-        
-        String[] array2 = {"aaa", "bbb"};
-        
-        char[] array3 = {'a', 'b'};
-        */
     }
 }
