@@ -70,17 +70,17 @@ public class Recursion
             }
         }
         
-    public static int sumOdds(int n)//WRONG, TODO: FIX
+    public static int sumOdds(int n)//GOOD, sumEvens would be switch the things
     {
-        if(n<=1)
+        if(n<=1)//n<=0
         {
-            return 1;
+            return 1;//0
         }
-        else if (n%2==1)
+        else if (n%2==1)//n%2==0
         {
             return n+sumOdds(n-2);
         }
-        else //if even
+        else //if even//if odd
         {
               return sumOdds(n-1);//does nothing except for make n an odd forever
         }
