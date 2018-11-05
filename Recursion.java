@@ -4,9 +4,9 @@ public class Recursion
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        
-        System.out.println(sumOdds(9));
-        System.out.println(sumEvens(8));
+        int n = sc.nextInt();
+        System.out.println(sumOdds(8));
+
     }
     //definition of FACTORIAL    n*(n-1)*(n-2)*...*1 OR  
     //n!= n*(n-1)!
@@ -61,5 +61,18 @@ public class Recursion
              return sumOdds(n-1);
         }
             
+    }
+    
+    public static int sumEvensAndOdds(int n)
+    {
+        if (n<=2)
+        {
+            return n;
+        }
+        else
+        {
+            return n+sumEvensAndOdds(n-2);
+        }
+        
     }
 }
