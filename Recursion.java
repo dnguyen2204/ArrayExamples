@@ -5,7 +5,9 @@ public class Recursion
     {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.println(sumOdds(8));
+        System.out.println(sumOdds(n));
+        System.out.println(sumEvens(n));
+
 
     }
     //definition of FACTORIAL    n*(n-1)*(n-2)*...*1 OR  
@@ -27,20 +29,20 @@ public class Recursion
             //recursion is the thing above, where n=students, and multiplier=rooms
             //and recursion is calling itself
             //definition of multiplication of n*x
-            //add n to itself x times
+            //add n to itself x times}
     }
         
     public static int sumOdds(int n)//GOOD, sumEvens would be switch the things
     {
-        if(n<=1)//1 is lowest odd
+        if(n<=1)//1 is lowest odd, STOPPING CONDITION
         {
             return 1;//0
         }
-        else if (n%2==1)//n%2==0
+        else if (n%2==1)//n%2==0, RECURSION IF ODD
         {
             return n+sumOdds(n-2);
         }
-        else //if even
+        else //if even, RECURSION IF EVEN
         {
               return sumOdds(n-1);//does nothing except for make n an odd forever
         }
@@ -58,7 +60,7 @@ public class Recursion
         }
         else
         {
-             return sumOdds(n-1);
+             return sumEvens(n-1);
         }
             
     }
